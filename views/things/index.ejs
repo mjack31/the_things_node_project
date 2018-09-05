@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container mt-3">
+    <div class="jumbotron mb-3">
+        <h1>TheThings!</h1>
+        <hr>
+        <p>Your best site of different things on whole web. Check some of our best ones!</p>
+        <a href="/things/new" class="btn btn-outline-light">Create new thing</a> 
+    </div>
+    <hr>
+    <div class="row">
+    <% things.forEach(function(thing){ %>
+        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+            <div class="card">
+                <img src="<%= thing.image %>" class="card-img-top">
+                <div class="card-body pt-2">
+                    <h5><%= thing.name %></h5>
+                    <p class="card-text"><%= thing.description.substring(0, 100) %>...</p>
+                    <a href="/things/<%= thing._id %>" class="btn btn-outline-dark btn-sm w-100">Read more</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

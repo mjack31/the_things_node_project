@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<div class="container mt-3">
+    <div class="mx-auto formDiv">
+        <h3><%= foundComm.author.username %> comment on <%= foundThing.name %>:</h3>
+        <form class="mb-4" action="/things/<%= foundThing._id %>/<%= foundComm._id %>?_method=PUT" method="POST">
+            <div class="form group mb-4">
+                <label for="commText">Text:</label>
+                <textarea class="form-control" id="commText" name="comment[text]" rows="6"><%= foundComm.text %></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary w-100">Edit comment!</button>
+        </form>
+        <a href="/things">Go back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

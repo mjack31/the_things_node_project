@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<div class="container mt-3">
+    <div class="mx-auto formDiv">
+        <form class="mb-4" action="/things" method="POST">
+            <div class="form group mb-4">
+                <label for="ThingName">Thing name:</label>
+                <input type="text" class="form-control" id="ThingName" name="thing[name]" placeholder="Name"></input>           
+            </div>
+            <div class="form group mb-4">
+                <label for="ThingImage">Thing image:</label>
+                <input type="text" class="form-control" id="ThingImage" name="thing[image]" placeholder="URL"></input> 
+            </div>
+            <div class="form group mb-4">
+                <label for="ThingDescription">Description:</label>
+                <textarea class="form-control" id="ThingDescription" name="thing[description]" rows="6"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary w-100">Create!</button>
+        </form>
+        <a href="/things">Go back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>
